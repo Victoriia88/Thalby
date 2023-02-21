@@ -1,0 +1,229 @@
+
+.slide-in-nav-item {
+  animation: slide-in-nav-item 0.4s linear 1 .2s both;
+}
+
+
+.slide-in-nav-item-delay-1 {
+  animation: slide-in-nav-item 0.4s linear 1 .4s both;
+}
+
+.slide-in-nav-item-delay-2 {
+  animation: slide-in-nav-item 0.4s linear 1 .6s both;
+}
+
+.slide-in-nav-item-delay-3 {
+  animation: slide-in-nav-item 0.4s linear 1 .8s both;
+}
+
+
+.slide-in-nav-item-reverse {
+  animation: slide-in-nav-item-reverse .3s linear 1 .5s both;
+}
+
+.slide-in-nav-item-delay-1-reverse {
+  animation: slide-in-nav-item-reverse .3s linear 1 .4s both;
+}
+
+.slide-in-nav-item-delay-2-reverse {
+  animation: slide-in-nav-item-reverse .3s linear 1 .3s both;
+}
+
+.slide-in-nav-item-delay-3-reverse {
+  animation: slide-in-nav-item-reverse .3s linear 1 .2s both;
+}
+
+
+
+
+/* ====================================
+Burger king
+==================================== */
+
+.open-overlay {
+  position: absolute;
+  right: 5rem;
+  top: 7px;
+  z-index: 100;
+  width: 34px;
+  display: none;
+  cursor: pointer;
+}
+
+.open-overlay span {
+  display: block;
+  height: 1px;
+  background-color: rosybrown;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.animate-top-bar {
+  animation: animate-top-bar .6s linear 1 both
+}
+
+.animate-bottom-bar {
+  animation: animate-bottom-bar .6s linear 1 both
+}
+
+.animate-middle-bar {
+  animation: animate-middle-bar .6s linear 1 both
+}
+
+.animate-out-top-bar {
+  animation: animate-out-top-bar .6s linear 1 both
+}
+
+.animate-out-bottom-bar {
+  animation: animate-out-bottom-bar .6s linear 1 both
+}
+
+.animate-out-middle-bar {
+  animation: animate-out-middle-bar .6s linear 1 both
+}
+
+
+/* ====================================
+Animation keyframes
+==================================== */
+
+@keyframes slide-in-nav-item {
+  from {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%)
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
+  }
+}
+
+@keyframes slide-in-nav-item-reverse {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
+  }
+  to {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%)
+  }
+}
+
+@keyframes animate-top-bar {
+  0% {
+    background-color: rosybrown;
+  }
+  50% {
+    -webkit-transform: translateY(9px);
+    transform: translateY(9px)
+  }
+  80% {
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+    background-color: rosybrown;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    background-color: #29363B;
+  }
+}
+
+@keyframes animate-bottom-bar {
+  0% {
+    background-color: rosybrown;
+  }
+  50% {
+    -webkit-transform: translateY(-9px);
+    transform: translateY(-9px)
+  }
+  80% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    background-color: rosybrown;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    background-color: #29363B;
+  }
+}
+
+@keyframes animate-middle-bar {
+  0% {
+    background-color:rosybrown;
+  }
+  80% {
+    background-color:rosybrown;
+  }
+  100% {
+    background-color: #29363B;
+  }
+}
+
+@keyframes animate-out-top-bar {
+  0% {
+    background-color: #29363B
+  }
+  50% {
+    -webkit-transform: translateY(9px);
+    transform: translateY(9px)
+  }
+  80% {
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+    background-color: #29363B
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    background-color: rosybrown;
+  }
+}
+
+@keyframes animate-out-bottom-bar {
+  0% {
+    background-color: #29363B
+  }
+  50% {
+    -webkit-transform: translateY(-9px);
+    transform: translateY(-9px)
+  }
+  80% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    background-color: #29363B;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    background-color:rosybrown;
+  }
+}
+
+@keyframes animate-out-middle-bar {
+  0% {
+    background-color: #29363B
+  }
+  80% {
+    background-color: #29363B;
+  }
+  100% {
+    background-color: rosybrown;
+  }
+}
+
+@media (max-width: 640px) {
+  nav ul li a {
+    font-size: 11px;
+  }
+  nav li a:after {
+    font-size: 0.6rem;
+  }
+  .open-overlay {
+    right: 1rem;
+  }
+  nav li a:before {
+    width: 15px;
+  }
+}
