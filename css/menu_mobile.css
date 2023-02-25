@@ -1,4 +1,4 @@
-
+/* 
 .slide-in-nav-item {
   animation: slide-in-nav-item 0.4s linear 1 .2s both;
 }
@@ -31,7 +31,7 @@
 
 .slide-in-nav-item-delay-3-reverse {
   animation: slide-in-nav-item-reverse .3s linear 1 .2s both;
-}
+} */
 
 
 
@@ -40,7 +40,7 @@
 Burger king
 ==================================== */
 
-.open-overlay {
+/* .open-overlay {
   position: absolute;
   right: 5rem;
   top: 7px;
@@ -56,9 +56,9 @@ Burger king
   background-color: rosybrown;
   cursor: pointer;
   margin-top: 8px;
-}
+} */
 
-.animate-top-bar {
+/* .animate-top-bar {
   animation: animate-top-bar .6s linear 1 both
 }
 
@@ -80,14 +80,14 @@ Burger king
 
 .animate-out-middle-bar {
   animation: animate-out-middle-bar .6s linear 1 both
-}
+} */
 
 
 /* ====================================
 Animation keyframes
 ==================================== */
 
-@keyframes slide-in-nav-item {
+/* @keyframes slide-in-nav-item {
   from {
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%)
@@ -211,19 +211,4 @@ Animation keyframes
   100% {
     background-color: rosybrown;
   }
-}
-
-@media (max-width: 640px) {
-  nav ul li a {
-    font-size: 11px;
-  }
-  nav li a:after {
-    font-size: 0.6rem;
-  }
-  .open-overlay {
-    right: 1rem;
-  }
-  nav li a:before {
-    width: 15px;
-  }
-}
+} */
