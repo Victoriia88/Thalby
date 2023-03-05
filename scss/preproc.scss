@@ -8,11 +8,19 @@ $white_color: #FFFFFF;
 $rosybrown_color: rosybrown;
 $darkgrey_color: #29363B;
 $main_font: 'Roboto', sans-serif;
+$main_line: 42px;
+$text_center: center;
+$font_normal: normal;
+
 
 @mixin max-screen($res) {
     @media screen and (max-width: $res) {
       @content;
     }
+  }
+  @mixin flex_space_btwn {
+    display: flex;
+    justify-content: space-between;
   }
 @mixin image_bs{
     width: 100%;
@@ -20,32 +28,32 @@ $main_font: 'Roboto', sans-serif;
 }
 @mixin h3_add{
     font-family: $main_font;
-font-style: normal;
+font-style: $font_normal;
 font-weight: 700;
 font-size: 17px;
 line-height: 20px;
-text-align: center;
+text-align: $text_center;
 color: $black_color;
 }
 @mixin price{
     font-family: $main_font;
-font-style: normal;
+    font-style: $font_normal;
 font-weight: 400;
 font-size: 17px;
 line-height: 20px;
-text-align: center;
+text-align: $text_center;
 color: $black_color;
 padding-top: 17px;
 padding-bottom: 10px;
 }
 @mixin button_add{
     font-family: $main_font;
-font-style: normal;
+    font-style: $font_normal;
 font-weight: 700;
 font-size: 17px;
 line-height: 20px;
 text-decoration-line: underline;
-text-align: center;
+text-align: $text_center;
 color: $black_color;
 }
 @mixin carousel{
@@ -116,7 +124,7 @@ header{
                 }
                 a{
                     font-family: $main_font;
-font-style: normal;
+                    font-style: $font_normal;
 font-weight: 700;
 font-size: 16px;
 line-height: 26px;
@@ -133,7 +141,7 @@ text-decoration: none;
     top: 46%;
     text-decoration: none;
     display: block;
-    text-align: center;
+    text-align: $text_center;
 }
 &:before {
     content: '';
@@ -171,6 +179,8 @@ text-decoration: none;
                 position: relative;
                 top: 3px;
                 margin-right: 16px;
+                @include max-screen(360px){
+                  margin-right: 7px;}
             }
             .a_search{
                 position: relative;
@@ -180,6 +190,8 @@ text-decoration: none;
                 position: relative;
                 top: -9px;
                 margin-left: 9px;
+                @include max-screen(480px){
+                  margin-left: 0;}
             }
         }
     }
@@ -195,9 +207,13 @@ text-decoration: none;
         @include max-screen(787px){
             display: inline-block;
         }
+        article{
+          @include max-screen(787px){
+            text-align: $text_center;}
+        
         h1{
             font-family: $main_font;
-            font-style: normal;
+            font-style: $font_normal;
             font-weight: 700;
             font-size: 60px;
             line-height: 70px;
@@ -229,7 +245,7 @@ text-decoration: none;
             }
             .p_h1{
                 font-family: $main_font;
-                font-style: normal;
+                font-style: $font_normal;
                 font-weight: 400;
                 font-size: 24px;
                 line-height: 28px;
@@ -247,21 +263,23 @@ text-decoration: none;
                     border-radius: 100px;
                     .buttom_shop{
                         font-family: $main_font;
-                        font-style: normal;
+                        font-style: $font_normal;
                         font-weight: 400;
                         font-size: 17px;
                         line-height: 20px;
                         color: $white_color;
                         text-decoration: none;
+                        cursor: pointer;
                     }
                 }
     }
+  }
     .container_img{
         position: relative;
         right: -128px;
     display: block;
     width: 100%;
-    @include max-screen(1100px){ 
+    @include max-screen(1336px){ 
         right: 0;
     }
     .img_h1{
@@ -275,13 +293,15 @@ text-decoration: none;
 .best_sellers{
     padding-top: 60px;
     padding-bottom: 248px;
+    @include max-screen(767px){
+      padding-bottom: 124px;}
     .h2_bs{
         font-family: $main_font;
-    font-style: normal;
+        font-style: $font_normal;
     font-weight: 700;
     font-size: 36px;
-    line-height: 42px;
-    text-align: center;
+    line-height: $main_line;
+    text-align: $text_center;
     color: $black_color;
     &:first-of-type{
         margin-bottom: 27px;
@@ -292,11 +312,11 @@ text-decoration: none;
     }
     .p_bs{
         font-family: $main_font;
-    font-style: normal;
+        font-style: $font_normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
-    text-align: center;
+    text-align: $text_center;
     color: $black_color;
     &:first-of-type{
         margin-bottom: 47px;
@@ -311,7 +331,7 @@ text-decoration: none;
     justify-content: space-between;
     .french_c{
         max-width: 309px;
-        text-align: center;
+        text-align: $text_center;
     .img_bs{
         @include image_bs;
     }
@@ -331,7 +351,7 @@ text-decoration: none;
     }
     .french_p{
         max-width: 314px;
-        text-align: center;
+        text-align: $text_center;
         .img_bs{
             @include image_bs;
         }
@@ -351,7 +371,7 @@ text-decoration: none;
     }
     .german_c{
         max-width: 315px;
-        text-align: center;
+        text-align: $text_center;
         .img_bs{
             @include image_bs;
         }
@@ -370,7 +390,7 @@ text-decoration: none;
     }
 }
 .owl-item{
-    text-align: center;
+  text-align: $text_center;
     display: flex;
     justify-content: center;
 }
@@ -443,14 +463,16 @@ text-decoration: none;
     cursor: pointer;
     @include max-screen(767px){
         display: inline-block;
+        right: 1rem;
     }
+
     @include max-screen(640px){
             right: 1rem;
     }
     span {
         display: block;
         height: 1px;
-        background-color: $rosybrown_color;
+        background-color: darkred;
         cursor: pointer;
         margin-top: 8px;
       }
@@ -608,5 +630,550 @@ Animation keyframes
       background-color: $rosybrown_color;
     }
   }
+
+  // section*****
+
+  .people_as{
+    padding-top: 76px ;
+    padding-bottom: 51px;
+    background: rgba(204, 204, 204, 0.3);
+border-radius: 0px;
+@include max-screen(767px){
+  padding-top: 38px ;
+  padding-bottom: 25px;}
+.container{
+  @include flex_space_btwn;
+  @include max-screen(767px){
+    display: inline-block;
+  }
+  img{
+    margin: auto;
+    display: block;
+    
+  }
+
+  @include max-screen(411px){
+    img{
+      width: 99%;
+    }}
+  .content_people{
+    max-width: 498px;
+    padding: 70px 0;
+    @include max-screen(953px){
+      margin-left: 10px;
+    }
+    @include max-screen(767px){
+      text-align: $text_center;
+    max-width: max-content;}
+    h2{
+      font-family: $main_font;
+      font-style: $font_normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: $main_line;
+  color: $black_color;
+  margin-bottom: 31px;
+  @include max-screen(1100px){
+    font-size: 32px;
+    line-height: 38px;
+  }
+  }
+  p{
+    font-family: $main_font;
+    font-style: $font_normal;
+font-weight: 400;
+font-size: 36px;
+line-height: $main_line;
+color: $black_color;
+margin-bottom: 40px;
+@include max-screen(1100px){
+  font-size: 32px;
+  line-height: 38px;
+}
+}
+a{
+  font-family: $main_font;
+  font-style: $font_normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration-line: underline;
+  color: $black_color;
+  }
+  }
+}
+  }
+  .culture_ah{
+    padding-top: 76px ;
+    padding-bottom: 51px;
+    background: rgba(204, 204, 204, 0.6);
+    border-radius: 0px;
+    @include max-screen(767px){
+      padding-top: 38px ;
+      padding-bottom: 25px;}
+    .container{
+      display: flex;
+      justify-content: space-between;
+      @include max-screen(767px){
+        display: inline-block;}
+        img{
+          margin: auto;
+          display: block;
+        }
+        @include max-screen(411px){
+          img{
+            width: 99%;
+          }}
+      .content_culture{
+        max-width: 513px;
+        padding: 92px 0 57px 0;
+        text-align: right;
+        @include max-screen(953px){
+margin-right: 15px;
+        }
+        @include max-screen(767px){
+          text-align: $text_center;
+        max-width: max-content;}
+        h2{
+          font-family: $main_font;
+          font-style: $font_normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: $main_line;
+      color: $black_color;
+      margin-bottom: 31px;
+      @include max-screen(1100px){
+        font-size: 32px;
+        line-height: 38px;
+      }
+      }
+      p{
+        font-family: $main_font;
+        font-style: $font_normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: $main_line;
+    color: $black_color;
+    margin-bottom: 31px;
+    @include max-screen(1100px){
+      font-size: 32px;
+      line-height: 38px;
+    }
+    }
+    a{
+      font-family: $main_font;
+      font-style: $font_normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration-line: underline;
+  color: $black_color;
+  }
+      }
+    
+  }
+}
+.power_ap{
+  padding-top: 76px ;
+  padding-bottom: 51px;
+  background: rgba(204, 204, 204, 0.3);
+border-radius: 0px;
+@include max-screen(767px){
+  padding-top: 38px ;
+  padding-bottom: 25px;}
+  img{
+    margin: auto;
+    display: block;
+  }
+.container{
+  @include max-screen(411px){
+  img{
+    width: 99%;
+  }}
+  @include flex_space_btwn;
+  @include max-screen(767px){
+    display: inline-block;}
+  .content_power{
+    max-width: 530px;
+    padding: 92px 0 91px 0;
+    @include max-screen(953px){
+      margin-left: 10px;
+              }
+    @include max-screen(767px){
+      text-align: $text_center;
+    max-width: max-content;}
+    h2{
+      font-family: $main_font;
+      font-style: $font_normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: $main_line;
+      color: $black_color;
+margin-bottom: 31px;  
+@include max-screen(1100px){
+  font-size: 32px;
+  line-height: 38px;
+}      
+}
+p{
+  font-family: $main_font;
+  font-style: $font_normal;
+font-weight: 400;
+font-size: 36px;
+line-height: $main_line;
+color: $black_color;
+margin-bottom: 39px;
+@include max-screen(1100px){
+  font-size: 32px;
+  line-height: 38px;
+}
+}
+ a{
+  font-family: $main_font;
+  font-style: $font_normal;
+font-weight: 700;
+font-size: 17px;
+line-height: 20px;
+text-decoration-line: underline;
+color: $black_color;
+}
+
+  }
+}
+}
+/* --------
+section ball
+-------- */
+.ball{
+  padding-top: 190px;
+  padding-bottom:290px ;
+  @include max-screen(767px){
+    padding-top: 95px ;
+    padding-bottom: 145px;}
+  h3{
+    font-family: $main_font;
+    font-style: $font_normal;
+font-weight: 700;
+font-size: 30px;
+line-height: 35px;
+text-align: $text_center;
+color: $black_color;
+@include max-screen(767px){
+  font-size: 25px;
+ line-height: 30px;}
+}
+  .b_h2small{
+    font-family: $main_font;
+    font-style: $font_normal;
+font-weight: 400;
+font-size: 36px;
+line-height: $main_line;
+text-align: $text_center;
+color: $black_color;
+margin-bottom: 69px;
+@include max-screen(767px){
+  font-size: 31px;
+ line-height: 37px;}
+}
+.color_ball{
+  display: inline-block;
+  width: 33%;
+  margin-bottom: 100px;
+  @include max-screen(821px){
+    display: contents;}
+  .style_ball{
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    @include max-screen(821px){
+      padding-top: 15px 0;}
+}
+.sky_color{
+  background-color: #21F7EC;
+}
+.green_color{
+  background: #33D3BC;
+}
+.blue_color{
+  background: #18A5C6;
+}
+.brouwn_color{
+  background: #D38F62;
+}
+.red_color{
+  background: #F94C43;
+}
+.purple_color{
+  background: #D399FF;
+}
+}
+.b_h2large{
+  font-family: $main_font;
+  font-style: $font_normal;
+font-weight: 700;
+font-size: 36px;
+line-height: $main_line;
+text-align: $text_center;
+color: $black_color;
+@include max-screen(767px){
+  font-size: 31px;
+ line-height: 27px;
+padding-top: 30px;}
+}
+}
+
+// *****section people______
+.sctn_people{
+  background: #F0F0F0;
+.s_people{
+  display: inline-block;
+  width: 33%;
+  margin-bottom: 50px;
+  text-align: $text_center;
+  margin-top: -11.875rem;
+  @include max-screen(861px){
+    display: block;
+  width: auto;
+margin-top: 0;
+padding: 12px 0;}
+  .people_p1{
+    font-family: $main_font;
+    font-style: $font_normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: $text_center;
+    letter-spacing: 0.6px;
+    color: $black_color;
+    margin-top: 35px;
+}
+.people_p2{
+  font-family: $main_font;
+  font-style: $font_normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+text-align: $text_center;
+color: $black_color;
+margin-top: 34px;
+margin-bottom: 44px;
+}
+a{
+  font-family: $main_font;
+  font-style: $font_normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 21px;
+text-align: $text_center;
+text-decoration-line: underline;
+color: $black_color;}
+}
+}
+/* ---------
+form--------
+----------- */
+.form_s{
+  padding-top: 79px;
+  padding-bottom: 88px;
+  .keep_it{
+    max-width: 496px;
+    margin: auto;
+    h2{
+      font-family: $main_font;
+      font-style: $font_normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: $main_line;
+  text-align: $text_center;
+  color: $black_color;
+  margin-bottom: 9px;
+  }
+  p{
+    font-family: $main_font;
+    font-style: $font_normal;
+font-weight: 700;
+font-size: 17px;
+line-height: 20px;
+text-align: $text_center;
+color: $black_color;
+margin-bottom: 38px;
+}
+.first_last_name{
+  @include flex_space_btwn;
+  flex-wrap: wrap;
+  max-width: 366px;
+  margin: auto;
+  @include max-screen(327px){
+   justify-content: center;}
+  .form_style{
+    border: 1px solid $black_color;
+border-radius: 0px;}
+.style_name{
+  width: 100%;
+  max-width: 153px;
+  padding: 12px 0 11px 8px;
+}
+
+.style_email{
+  width: 100%;
+  padding: 13px 0 10px 8px;
+  margin-top: 18px;
+  margin-bottom: 16px;
+
+}
+.button_subscribe{
+  margin: auto;
+  font-family: $main_font;
+  font-style: $font_normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: $text_center;
+      color: $white_color;
+      padding: 8px 23px;
+  text-decoration: none;
+  background: $black_color;
+  border: 1px solid $black_color;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all .2s linear;
+  
+  }
+  }
+}
+}
+/* -------------
+**footer****
+------------- */
+footer{
+  background: #020202;
+border-radius: 0px;
+padding-top: 51px;
+padding-bottom:16px;
+.footer_content{
+  @include flex_space_btwn;
+  .icon_h{
+    li{
+      display: inline-block;
+      margin-top: 36px;
+      margin-left: 14px;
+      margin-right: 14px;
+  &:first-of-type{
+    margin-left: 0;
+}
+&:last-of-type{
+  margin-right: 0;
+}
+    }
+  }
+}
+.content_r{
+  display: flex;
+  @include max-screen(480px){
+    display: block;}
+  
+  .about{
+    margin-right: 70px;
+    @include max-screen(767px){
+      margin-right: 10px;}
+    h3{
+      font-family: $main_font;
+      font-style: $font_normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 23px;
+      color: $white_color;
+      margin-bottom: 36px;
+      @include max-screen(480px){
+        font-size: 13px;
+      line-height: 18px;
+      margin-bottom: 16px;}
+  }
+  ul{
+    li {
+      font-family: $main_font;
+      font-style: $font_normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: $white_color;
+  margin-bottom: 12px;
+  list-style: none;
+  @include max-screen(480px){
+    font-size: 11px;
+  line-height: 16px;
+  margin-bottom: 10px;}
+  a{
+    text-decoration: none;
+    color: inherit;
+    }
+  }
+  }
+}
+
+}
+.contact {
+  h3{
+  font-family: $main_font;
+  font-style: $font_normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 23px;
+color: $white_color;
+margin-bottom: 36px;
+@include max-screen(480px){
+  font-size: 13px;
+line-height: 18px;
+margin-bottom: 16px;}
+}
+ul{
+  li{
+    font-family: $main_font;
+    font-style: $font_normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 21px;
+color: $white_color;
+margin-bottom: 12px;
+list-style: none;
+@include max-screen(480px){
+  font-size: 11px;
+line-height: 16px;
+margin-bottom: 10px;}
+a{
+  text-decoration: none;
+  color: inherit;
+  }
+}
+}
+}
+.f_copyright {
+p{
+  font-family: $main_font;
+  font-style: $font_normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 23px;
+  text-align: $text_center;
+  color: $white_color;
+  margin-top: 8px;
+}
+}
+}
+
+.fancy {
+  text-align:start;
+}
+
+span {
+  opacity: 0.25;
+  transition: all 0.4s ease;
+}
+span.fade {
+  opacity: 1;
+}
+
 
 @import url(../css/media.css);
